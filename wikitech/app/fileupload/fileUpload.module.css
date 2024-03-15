@@ -1,0 +1,67 @@
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.formControl {
+    margin-bottom: 30px;
+}
+
+.inputFile {
+    display: none;
+}
+
+.uploadButton {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #5b3ce8;
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.uploadButton:hover {
+    background-color: #4a2ac6;
+}
+
+.previewImage {
+    width: 100%;
+    max-width: 250px;
+    max-height: 250px;
+    margin-bottom: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.previewImage:hover {
+    transform: scale(1.05);
+}
+
+.uploadedFileInfo {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 12px;
+}
+
+.loading {
+    margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    .uploadButton {
+        padding: 12px 24px;
+    }
+}

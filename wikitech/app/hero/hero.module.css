@@ -1,0 +1,71 @@
+
+.hero {
+  background-image: url("../../public/techbg.jpg");
+  height: 50vh; 
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-size: cover; 
+  position: relative;
+  clip-path: polygon(0% 0%, 100% 0%, 100.1% 82.8%, 0% 100%); /* Custom clip path */
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+}
+
+
+.heroContent {
+  text-align: center;
+  color: #ffffff; 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1; 
+}
+
+
+.heroContent h1 {
+  font-size: 2.5rem; 
+  margin-bottom: 20px;
+  font-weight: bold;
+  animation: fadeInUp 1s forwards;
+}
+
+
+.herobtn {
+  display: inline-block;
+  padding: 12px 25px; 
+  color: #fff;
+  background-color: #6462df;
+  text-align: center;
+  cursor: pointer;
+  font-size: 16px; 
+  border-radius: 20px; 
+  border: none;
+  transition: background-color 0.3s, transform 0.3s; 
+}
+
+.herobtn:hover {
+  background-color: #3100f3;
+  transform: translateY(-3px); 
+}
+
+.heroImage {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  clip-path: polygon(0% 0%, 100% 0%, 100.1% 82.8%, 0% 100%); 
+}
