@@ -1,15 +1,15 @@
-"use client"
-import React, { useState } from 'react';
-import styles from './todolist.module.css';
+"use client";
+import React, { useState } from "react";
+import styles from "./todolist.module.css";
 
 const TodoList = () => {
   const [tasks, setTasks] = useState([]);
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState("");
 
   const addTask = () => {
-    if (inputValue.trim() !== '') {
+    if (inputValue.trim() !== "") {
       setTasks([...tasks, { title: inputValue, completed: false }]);
-      setInputValue('');
+      setInputValue("");
     }
   };
 
@@ -38,17 +38,17 @@ const TodoList = () => {
         onChange={(e) => setInputValue(e.target.value)}
         placeholder="Enter a task"
       />
-      <button className={styles.addtaskbtn} onClick={addTask}>Add Task</button>
+      <button className={styles.addtaskbtn} onClick={addTask}>
+        Add Task
+      </button>
       <ul>
         {tasks.map((task, index) => (
           <li key={index} className={styles.task}>
-            <span
-              className={task.completed ? styles.completed : ''}
-            >
+            <span className={task.completed ? styles.completed : ""}>
               {task.title}
             </span>
             <button onClick={() => toggleTaskCompletion(index)}>
-              {task.completed ? 'Undo' : 'Complete'}
+              {task.completed ? "Undo" : "Complete"}
             </button>
             <button onClick={() => deleteTask(index)}>Delete</button>
           </li>

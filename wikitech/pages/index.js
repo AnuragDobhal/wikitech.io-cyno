@@ -7,6 +7,7 @@ import React from "react";
 import Head from "next/head";
 import TawkToChat from "../app/TwakToChat/TawkToChat";
 import Footer from "../app/footer/page";
+import ServicesPage from "../app/ourservices/page";
 
 
 const Home = () => {
@@ -19,6 +20,7 @@ const Home = () => {
       <HeroSection />
       <Banner />
       <About />
+      <ServicesPage/>
       <ContactForm />
       <TawkToChat />
       <Footer/>

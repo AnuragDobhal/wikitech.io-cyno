@@ -41,6 +41,10 @@ const Navbar = () => {
         <Link href="/todolist" passHref legacyBehavior>
           <a className={styles.navLink}>To Do List</a>
         </Link>
+
+        <Link href="/estore/products/" passHref legacyBehavior>
+          <a className={styles.navLink}>Explore Store</a>
+        </Link>
       </div>
     </nav>
   );

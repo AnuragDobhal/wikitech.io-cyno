@@ -1,6 +1,7 @@
-"use client"
-import { useState } from 'react';
-import styles from './fileUpload.module.css';
+"use client";
+
+import { useState } from "react";
+import styles from "./fileUpload.module.css";
 
 const FileUploadForm = () => {
   const [file, setFile] = useState(null);
@@ -23,37 +24,42 @@ const FileUploadForm = () => {
     setLoading(true);
 
     const formData = new FormData();
-    formData.append('file', file);
+    formData.append("file", file);
 
     try {
-      const response = await fetch('/api/upload', {
-        method: 'POST',
+      const response = await fetch("/api/upload", {
+        method: "POST",
         body: formData,
       });
       if (response.ok) {
         const data = await response.json();
-        console.log('File uploaded successfully:', data);
+        console.log("File uploaded successfully:", data);
         setUploadData(data);
-       
       } else {
-        console.error('File upload failed');
+        console.error("File upload failed");
       }
     } catch (error) {
-      console.error('Error uploading file:', error);
+      console.error("Error uploading file:", error);
     } finally {
       setLoading(false);
-    }
+     }
   };
 
   return (
     <div className={styles.container}>
       <form onSubmit={handleSubmit}>
         <input type="file" onChange={handleFileChange} />
-        <button type="submit" className={styles.uploadButton}>Upload</button>
+        <button type="submit" className={styles.uploadButton}>
+          Upload
+        </button>
       </form>
       {previewImage && (
         <div className={styles.preview}>
-          <img src={previewImage} alt="Preview" className={styles.previewImage} />
+          <img
+            src={previewImage}
+            alt="Preview"
+            className={styles.previewImage}
+          />
         </div>
       )}
       {uploadData && (
@@ -61,8 +67,9 @@ const FileUploadForm = () => {
           <h2>Uploaded File Information</h2>
           <p className={styles.uploadedFileDetail}>File Name: {file.name}</p>
           <p className={styles.uploadedFileDetail}>MIME Type: {file.type}</p>
-          <p className={styles.uploadedFileDetail}>File Size: {file.size} bytes</p>
-         
+          <p className={styles.uploadedFileDetail}>
+            File Size: {file.size} bytes
+          </p>
         </div>
       )}
       {loading && <div className={styles.loading}>Loading...</div>}
